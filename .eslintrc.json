@@ -1,0 +1,13 @@
+{
+  "root": true,
+  "extends": "@enlibe/eslint-config/ts-strict",
+  "parserOptions": {
+    "project": "./tsconfig-eslint.json",
+    "sourceType": "module",
+    "ecmaVersion": 2018,
+    "ecmaFeatures": {
+      "impliedStrict": true,
+      "jsx": true
+    }
+  }
+}

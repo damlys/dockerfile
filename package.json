@@ -1,0 +1,58 @@
+{
+  "name": "@damlys/dockerfile",
+  "version": "0.2.0",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Describe Dockerfile metadata with a package.json file",
+  "keywords": [
+    "continuous-integration",
+    "docker",
+    "docker-compose",
+    "dockerfile",
+    "release-automation",
+    "release-cycle",
+    "release-management",
+    "release-pipeline"
+  ],
+  "author": {
+    "name": "Damian Łysiak"
+  },
+  "license": "UNLICENSE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/damlys/dockerfile.git"
+  },
+  "files": [
+    "src-cjs"
+  ],
+  "main": "src-cjs/index.js",
+  "types": "src-cjs/index.d.ts",
+  "bin": {
+    "dockerfile": "src-cjs/bin/dockerfile.js"
+  },
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=5.6.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@enlibe/eslint-config": "0.6.0",
+    "@enlibe/ts-sdk": "0.6.0"
+  },
+  "scripts": {
+    "build": "rm -rf ./src-cjs && tsc",
+    "build:exec": "node ./src-cjs/bin/dockerfile.js",
+    "build:repl": "nodemon ./src-cjs/bin/dockerfile.js",
+    "dev:exec": "ts-node ./src/bin/dockerfile.ts",
+    "dev:repl": "ts-node-dev ./src/bin/dockerfile.ts",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint './**/*.{ts,tsx}' --fix",
+    "lint:check": "eslint './**/*.{ts,tsx}'",
+    "test": "jest",
+    "test:coverage": "rm -rf ./coverage && jest --coverage",
+    "test:watch": "jest --watchAll"
+  }
+}

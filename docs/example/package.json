@@ -1,0 +1,24 @@
+{
+  "name": "@your/super-app",
+  "version": "0.0.0",
+  "files": [
+    "src"
+  ],
+  "bin": {
+    "super-app": "src/bin/super-app.js"
+  },
+  "devDependencies": {
+    "@damlys/dockerfile": "*"
+  },
+  "scripts": {
+    "dockerfile:build": "dockerfile compose | docker-compose --file - build",
+    "dockerfile:publish": "dockerfile compose | docker-compose --file - push"
+  },
+  "dockerfile": {
+    "build": {
+      "args": [
+        "YOUR_SECRET_TOKEN"
+      ]
+    }
+  }
+}
