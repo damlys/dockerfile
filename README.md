@@ -102,7 +102,7 @@ and descriptions:
 Same as Docker Compose `v3.7`.
 See [official specification](https://docs.docker.com/compose/compose-file/#build).
 
-This package adds `PACKAGE_NAME` and `PACKAGE_VERSION`
+This tool adds `PACKAGE_NAME` and `PACKAGE_VERSION`
 arguments (`.dockerfile.build.args`) on it's own,
 so remember to not use them in a `package.json` file!
 
@@ -137,7 +137,7 @@ image, i      Displays Docker image name. Try it with the "docker" command:
               $ docker image build --tag "$(dockerfile image)" .
               $ docker image inspect "$(dockerfile image)"
               $ docker image push "$(dockerfile image)"
-compose, c    Displays Docker Compose manifest. Try it with the "docker-compose" command:
+compose, c    Displays Docker Compose v3.7 manifest. Try it with the "docker-compose" command:
               $ dockerfile compose | docker-compose --file - config
               $ dockerfile compose | docker-compose --file - build
               $ dockerfile compose | docker-compose --file - push

@@ -39,6 +39,7 @@
   "dependencies": {},
   "devDependencies": {
     "@enlibe/eslint-config": "0.6.0",
+    "@enlibe/node-scripts": "0.2.0",
     "@enlibe/ts-sdk": "0.6.0"
   },
   "scripts": {
@@ -53,6 +54,7 @@
     "lint:check": "eslint './**/*.{ts,tsx}'",
     "test": "jest",
     "test:coverage": "rm -rf ./coverage && jest --coverage",
-    "test:watch": "jest --watchAll"
+    "test:watch": "jest --watchAll",
+    "version": "add-keepachangelog-header ./CHANGELOG.md && git add ./CHANGELOG.md"
   }
 }

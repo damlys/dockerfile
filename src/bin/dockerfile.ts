@@ -13,7 +13,7 @@ image, i      Displays Docker image name. Try it with the "docker" command:
               $ docker image build --tag "$(dockerfile image)" .
               $ docker image inspect "$(dockerfile image)"
               $ docker image push "$(dockerfile image)"
-compose, c    Displays Docker Compose manifest. Try it with the "docker-compose" command:
+compose, c    Displays Docker Compose v3.7 manifest. Try it with the "docker-compose" command:
               $ dockerfile compose | docker-compose --file - config
               $ dockerfile compose | docker-compose --file - build
               $ dockerfile compose | docker-compose --file - push
