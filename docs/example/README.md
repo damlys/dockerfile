@@ -2,7 +2,7 @@ Get the Docker image name:
 
 ```console
 $ dockerfile image
-your/super-app:0.0.0
+your/super-app:1.0.0
 ```
 
 Get the Docker Compose manifest:
@@ -13,13 +13,13 @@ $ dockerfile compose
   "version": "3.7",
   "services": {
     "service0": {
-      "image": "your/super-app:0.0.0",
+      "image": "your/super-app:1.0.0",
       "build": {
         "context": ".",
         "dockerfile": "Dockerfile",
         "args": [
           "PACKAGE_NAME=@your/super-app",
-          "PACKAGE_VERSION=0.0.0",
+          "PACKAGE_VERSION=1.0.0",
           "YOUR_SECRET_TOKEN"
         ]
       }
@@ -38,10 +38,10 @@ services:
     build:
       args:
         PACKAGE_NAME: '@your/super-app'
-        PACKAGE_VERSION: 0.0.0
+        PACKAGE_VERSION: 1.0.0
         YOUR_SECRET_TOKEN: Secret123
       context: /home/damlys/workspace/dockerfile/docs/example
       dockerfile: Dockerfile
-    image: your/super-app:0.0.0
+    image: your/super-app:1.0.0
 version: '3.7'
 ```

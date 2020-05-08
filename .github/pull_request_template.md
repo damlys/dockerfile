@@ -12,8 +12,8 @@ Closes #0
 
 #### Sanity checklist
 
-- [ ] Tests have been added/updated (if needed)
+- [ ] Looks good
 - [ ] Documentation has been updated (if needed)
-- [ ] CI pipeline has been updated (if needed)
-- [ ] Version has been updated (if needed)
-- [ ] Changelog has been updated (if needed)
+- [ ] Changelog has been updated
+- [ ] Version MAJOR.MINOR. numbers has been updated (if needed)
+- [ ] Pull request has been linked to the issue
