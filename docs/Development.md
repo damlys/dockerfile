@@ -7,7 +7,7 @@ $ npm run build
 $ npm run lint
 $ npm run test
 
-$ alias dockerfile="$(pwd)/src-cjs/bin/dockerfile.js"
+$ alias dockerfile="node $(pwd)/src-cjs/bin/dockerfile.js"
 ```
 
 ## Versioning
