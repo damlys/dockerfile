@@ -47,7 +47,7 @@ How to get, configure and use the `dockerfile` tool.
 ### Requirements
 
 Node.js and NPM are required to install
-and use the package:
+and use this package:
 
 ```console
 $ node
@@ -68,14 +68,14 @@ Install it globally:
 
 ```console
 $ npm install --global @damlys/dockerfile
-$ dockerfile version
+$ dockerfile --version
 ```
 
 Install it in a project (preferred):
 
 ```console
 $ npm install --save-dev @damlys/dockerfile
-$ ./node_modules/.bin/dockerfile version
+$ ./node_modules/.bin/dockerfile --version
 ```
 
 ### Configuration
@@ -126,11 +126,11 @@ a command line.
 #### Command line
 
 ```console
-$ dockerfile help
-This tool parses package.json file (from the current working directory)
-and returns useful data for the official Docker commands.
+$ dockerfile --help
+This tool parses package.json file and returns useful data
+for the official Docker commands.
 
-Usage: dockerfile [command]
+Usage: dockerfile [command] [workdir=.]
 
 Commands:
 compose, c      Displays Docker Compose v3.7 manifest. Example usage:
@@ -148,8 +148,7 @@ tag, t          Displays version from the package.json file. Example usage:
 --help, -h      Displays the help of this tool (you are reading it now)
 --version, -v   Displays the version of this tool
 
-Tips:
-- Use "cd" command to change the current working directory.
+Important note: "workdir" parameter doesn't affect Docker Compose context.
 ```
 
 Try to start with the following scripts

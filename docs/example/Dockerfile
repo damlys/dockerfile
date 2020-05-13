@@ -1,5 +1,6 @@
 # It's recommended to use something more specific than a latest tag
 FROM node:latest
+ENV NODE_ENV="production"
 
 # Yup. Used nowhere
 ARG YOUR_SECRET_TOKEN

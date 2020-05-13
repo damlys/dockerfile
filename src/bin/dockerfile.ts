@@ -1,12 +1,13 @@
 #!/usr/bin/env node
 
+import "process";
 import path from "path";
 import { compose, image, name, tag, PackageJsonInterface } from "..";
 
-const help: string = `This tool parses package.json file (from the current working directory)
-and returns useful data for the official Docker commands.
+const help: string = `This tool parses package.json file and returns useful data
+for the official Docker commands.
 
-Usage: dockerfile [command]
+Usage: dockerfile [command] [workdir=.]
 
 Commands:
 compose, c      Displays Docker Compose v3.7 manifest. Example usage:
@@ -24,30 +25,39 @@ tag, t          Displays version from the package.json file. Example usage:
 --help, -h      Displays the help of this tool (you are reading it now)
 --version, -v   Displays the version of this tool
 
-Tips:
-- Use "cd" command to change the current working directory.
+Important note: "workdir" parameter doesn't affect Docker Compose context.
 `;
 
 function getVersion(): string {
   try {
     const { version } = require("../../package.json"); // eslint-disable-line
-    return version;
+    return version || "UNKNOWN";
   } catch {
     return "UNKNOWN";
   }
+}
+
+function getWorkingDirectory(): string {
+  const workingDirectory: string = process.argv[3] || ".";
+  if (path.isAbsolute(workingDirectory)) {
+    return workingDirectory;
+  }
+  return path.join(process.cwd(), workingDirectory);
 }
 
 /**
  * @throws Error
  */
 function getPackageJson(): PackageJsonInterface {
-  const packageJsonPath: string = path.join(process.cwd(), "package.json");
+  const packageJsonPath: string = path.join(getWorkingDirectory(), "package.json");
   try {
     const packageJsonDto: PackageJsonInterface = require(packageJsonPath); // eslint-disable-line
     if (typeof packageJsonDto === "object" && packageJsonDto !== null) {
       return packageJsonDto;
     }
-  } catch {} // eslint-disable-line no-empty
+  } catch {
+    // eslint-disable-line no-empty
+  }
   throw new Error(`Cannot load "${packageJsonPath}" file.`);
 }
 
@@ -58,40 +68,40 @@ async function main(): Promise<void> {
       case "c":
         process.stdout.write(JSON.stringify(compose(getPackageJson()), null, 2));
         process.exit(0);
-        break;
+        return;
       case "image":
       case "i":
         process.stdout.write(image(getPackageJson()));
         process.exit(0);
-        break;
+        return;
       case "name":
       case "n":
         process.stdout.write(name(getPackageJson()));
         process.exit(0);
-        break;
+        return;
       case "tag":
       case "t":
         process.stdout.write(tag(getPackageJson()));
         process.exit(0);
-        break;
+        return;
       case "--version":
       case "-v":
-        process.stdout.write(`dockerfile v${getVersion()}\n`);
+        process.stderr.write(`dockerfile v${getVersion()}\n`);
         process.exit(0);
-        break;
+        return;
       case "--help":
       case "-h":
       case "":
       case undefined:
-        process.stdout.write(help);
+        process.stderr.write(help);
         process.exit(0);
-        break;
+        return;
       default:
-        process.stdout.write(
+        process.stderr.write(
           `Command "${process.argv[2]}" does not exist. Use one of: "compose", "image", "name", "tag" or "--help".\n`
         );
         process.exit(127);
-        break;
+        return;
     }
   } catch (error) {
     process.stderr.write(`Something went wrong!\n${error.toString()}\n`);

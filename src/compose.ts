@@ -4,6 +4,8 @@ import { image } from "./image";
 /**
  * Returns Docker Compose v3.7 manifest.
  *
+ * https://docs.docker.com/compose/compose-file/
+ *
  * @throws Error
  */
 export function compose(packageJsonDto: PackageJsonInterface): object {
