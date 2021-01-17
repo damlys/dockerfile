@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Unreleased
 
+## [0.5.0] - 2021-01-17
+
+### Changed
+
+- Generate Docker Compose configuration with `v3.8` version.
+
 ## [0.4.1] - 2020-05-13
 
 ### Added

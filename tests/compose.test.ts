@@ -7,7 +7,7 @@ test("should parse package without custom config", (): void => {
     version: "1.0.0",
   };
   const dockerComposeDto: object = {
-    version: "3.7",
+    version: "3.8",
     services: {
       service0: {
         image: "foo/bar:1.0.0",
@@ -46,7 +46,7 @@ test("should parse package with build context path as config", (): void => {
     },
   };
   const dockerComposeDto: object = {
-    version: "3.7",
+    version: "3.8",
     services: {
       service0: {
         image: "foo/bar:1.0.0",
@@ -78,7 +78,7 @@ test("should parse package with custom config", (): void => {
     },
   };
   const dockerComposeDto1: object = {
-    version: "3.7",
+    version: "3.8",
     services: {
       service0: {
         image: "foo/bar:1.0.0",
@@ -105,7 +105,7 @@ test("should parse package with custom config", (): void => {
     },
   };
   const dockerComposeDto2: object = {
-    version: "3.7",
+    version: "3.8",
     services: {
       service0: {
         image: "registry.foo.tld:5000/bar:1.0.0",

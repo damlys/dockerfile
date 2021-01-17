@@ -21,7 +21,7 @@ damlys/dockerfile:0.0.0
 
 $ dockerfile compose
 {
-  "version": "3.7",
+  "version": "3.8",
   "services": {
     "service0": {
       "image": "damlys/dockerfile:0.0.0",
@@ -99,8 +99,8 @@ and descriptions:
 
 #### .dockerfile.build
 
-Same as Docker Compose `v3.7`.
-See [official specification](https://docs.docker.com/compose/compose-file/#build).
+Same as Docker Compose `v3.8`.
+See [official specification](https://docs.docker.com/compose/compose-file/compose-file-v3/).
 
 This tool adds `PACKAGE_NAME` and `PACKAGE_VERSION`
 arguments (`.dockerfile.build.args`) on it's own,
@@ -127,13 +127,12 @@ a command line.
 
 ```console
 $ dockerfile --help
-This tool parses package.json file and returns useful data
-for the official Docker commands.
+This tool parses package.json file and returns useful data for the official Docker commands.
 
 Usage: dockerfile [command] [workdir=.]
 
 Commands:
-compose, c      Displays Docker Compose v3.7 manifest. Example usage:
+compose, c      Displays Docker Compose v3.8 manifest. Example usage:
                 $ dockerfile compose | docker-compose --file - config
                 $ dockerfile compose | docker-compose --file - build
                 $ dockerfile compose | docker-compose --file - push
@@ -148,7 +147,7 @@ tag, t          Displays version from the package.json file. Example usage:
 --help, -h      Displays the help of this tool (you are reading it now)
 --version, -v   Displays the version of this tool
 
-Important note: "workdir" parameter doesn't affect Docker Compose context.
+Note: "workdir" parameter doesn't affect Docker Compose context.
 ```
 
 Try to start with the following scripts
@@ -157,8 +156,8 @@ in your `package.json` file:
 ```json
 {
   "scripts": {
-    "dockerfile:build": "dockerfile compose | docker-compose --file - build",
-    "dockerfile:publish": "dockerfile compose | docker-compose --file - push"
+    "docker:build": "dockerfile compose | docker-compose --file - build",
+    "docker:publish": "dockerfile compose | docker-compose --file - push"
   }
 }
 ```

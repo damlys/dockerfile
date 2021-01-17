@@ -4,13 +4,12 @@ import "process";
 import path from "path";
 import { compose, image, name, tag, PackageJsonInterface } from "..";
 
-const help: string = `This tool parses package.json file and returns useful data
-for the official Docker commands.
+const help: string = `This tool parses package.json file and returns useful data for the official Docker commands.
 
 Usage: dockerfile [command] [workdir=.]
 
 Commands:
-compose, c      Displays Docker Compose v3.7 manifest. Example usage:
+compose, c      Displays Docker Compose v3.8 manifest. Example usage:
                 $ dockerfile compose | docker-compose --file - config
                 $ dockerfile compose | docker-compose --file - build
                 $ dockerfile compose | docker-compose --file - push
@@ -25,7 +24,7 @@ tag, t          Displays version from the package.json file. Example usage:
 --help, -h      Displays the help of this tool (you are reading it now)
 --version, -v   Displays the version of this tool
 
-Important note: "workdir" parameter doesn't affect Docker Compose context.
+Note: "workdir" parameter doesn't affect Docker Compose context.
 `;
 
 function getVersion(): string {

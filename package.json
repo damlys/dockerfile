@@ -1,6 +1,6 @@
 {
   "name": "@damlys/dockerfile",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "private": false,
   "publishConfig": {
     "access": "public"
@@ -39,7 +39,7 @@
   "dependencies": {},
   "devDependencies": {
     "@enlibe/eslint-config": "0.6.0",
-    "@enlibe/node-scripts": "0.2.0",
+    "@enlibe/node-scripts": "0.3.3",
     "@enlibe/ts-sdk": "0.6.0"
   },
   "scripts": {

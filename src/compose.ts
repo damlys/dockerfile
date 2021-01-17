@@ -2,7 +2,7 @@ import { PackageJsonInterface } from "./PackageJsonInterface";
 import { image } from "./image";
 
 /**
- * Returns Docker Compose v3.7 manifest.
+ * Returns Docker Compose v3.8 manifest.
  *
  * https://docs.docker.com/compose/compose-file/
  *
@@ -40,7 +40,7 @@ export function compose(packageJsonDto: PackageJsonInterface): object {
   }
 
   return {
-    version: "3.7",
+    version: "3.8",
     services: {
       service0: {
         image: image(packageJsonDto),

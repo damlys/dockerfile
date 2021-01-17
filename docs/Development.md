@@ -2,8 +2,8 @@
 
 ```console
 $ npm install
-$ npm run format
 $ npm run build
+$ npm run format
 $ npm run lint
 $ npm run test
 
@@ -30,5 +30,5 @@ This project uses GitHub Actions.
 
 Workflow requires `NPM_TOKEN` secret.
 
-See [.github/workflows/ci.yaml](../.github/workflows/ci.yaml)
+See [.github/workflows/cd.yaml](../.github/workflows/cd.yaml)
 file.

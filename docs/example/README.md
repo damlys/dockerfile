@@ -10,7 +10,7 @@ Get the Docker Compose manifest:
 ```console
 $ dockerfile compose
 {
-  "version": "3.7",
+  "version": "3.8",
   "services": {
     "service0": {
       "image": "your/super-app:1.0.0",
@@ -43,5 +43,5 @@ services:
       context: /home/damlys/workspace/dockerfile/docs/example
       dockerfile: Dockerfile
     image: your/super-app:1.0.0
-version: '3.7'
+version: '3.8'
 ```

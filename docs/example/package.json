@@ -11,8 +11,8 @@
     "@damlys/dockerfile": "*"
   },
   "scripts": {
-    "dockerfile:build": "dockerfile compose | docker-compose --file - build",
-    "dockerfile:publish": "dockerfile compose | docker-compose --file - push"
+    "docker:build": "dockerfile compose | docker-compose --file - build",
+    "docker:publish": "dockerfile compose | docker-compose --file - push"
   },
   "dockerfile": {
     "build": {
