@@ -5,14 +5,14 @@
     "src"
   ],
   "bin": {
-    "super-app": "src/bin/super-app.js"
+    "super-app": "src/bin/main.js"
   },
   "devDependencies": {
     "@damlys/dockerfile": "*"
   },
   "scripts": {
     "docker:build": "dockerfile compose | docker-compose --file - build",
-    "docker:publish": "dockerfile compose | docker-compose --file - push"
+    "docker:exec": "docker run --rm \"$(dockerfile image)\""
   },
   "dockerfile": {
     "build": {

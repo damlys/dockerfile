@@ -6,7 +6,7 @@ test("should parse package without custom config", (): void => {
     name: "@foo/bar",
     version: "1.0.0",
   };
-  const dockerComposeDto: object = {
+  const dockerComposeDto: any = {
     version: "3.8",
     services: {
       service0: {
@@ -34,7 +34,7 @@ test("should throw error if package name/version is undefined/invalid", (): void
     version: "1.0.0",
   };
 
-  expect((): object => compose(packageJsonDto)).toThrow(Error);
+  expect((): any => compose(packageJsonDto)).toThrow(Error);
 });
 
 test("should parse package with build context path as config", (): void => {
@@ -45,7 +45,7 @@ test("should parse package with build context path as config", (): void => {
       build: "foo/bar/baz",
     },
   };
-  const dockerComposeDto: object = {
+  const dockerComposeDto: any = {
     version: "3.8",
     services: {
       service0: {
@@ -77,7 +77,7 @@ test("should parse package with custom config", (): void => {
       },
     },
   };
-  const dockerComposeDto1: object = {
+  const dockerComposeDto1: any = {
     version: "3.8",
     services: {
       service0: {
@@ -104,7 +104,7 @@ test("should parse package with custom config", (): void => {
       },
     },
   };
-  const dockerComposeDto2: object = {
+  const dockerComposeDto2: any = {
     version: "3.8",
     services: {
       service0: {

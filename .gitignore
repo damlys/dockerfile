@@ -1,17 +1,14 @@
 #############################
-### Workflow
+### System
 #############################
 
-/.env
-
-#############################
-### Node.js
-#############################
-
-/coverage
-/node_modules
-/npm-debug.log
-/src-cjs
+*.bak
+*.swp
+*.tmp
+*~
+.DS_Store
+desktop.ini
+thumbs.db
 
 #############################
 ### IDE
@@ -24,13 +21,10 @@
 /.vscode
 
 #############################
-### System
+### Node.js
 #############################
 
-*.bak
-*.swp
-*.tmp
-*~
-.DS_Store
-desktop.ini
-thumbs.db
+/coverage
+/dist
+/node_modules
+/npm-debug.log

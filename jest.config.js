@@ -1,4 +1,1 @@
-module.exports = {
-  testEnvironment: "node",
-  preset: "ts-jest",
-};
+module.exports = require("@damlys/ts-sdk/jest.config.json");

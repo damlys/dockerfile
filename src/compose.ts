@@ -8,7 +8,7 @@ import { image } from "./image";
  *
  * @throws Error
  */
-export function compose(packageJsonDto: PackageJsonInterface): object {
+export function compose(packageJsonDto: PackageJsonInterface): any {
   if (packageJsonDto.dockerfile === undefined) {
     packageJsonDto.dockerfile = {};
   }

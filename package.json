@@ -1,6 +1,6 @@
 {
   "name": "@damlys/dockerfile",
-  "version": "0.5.1",
+  "version": "0.6.0-0",
   "private": false,
   "publishConfig": {
     "access": "public"
@@ -25,12 +25,12 @@
     "url": "https://github.com/damlys/dockerfile.git"
   },
   "files": [
-    "src-cjs"
+    "dist"
   ],
-  "main": "src-cjs/index.js",
-  "types": "src-cjs/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "bin": {
-    "dockerfile": "src-cjs/bin/dockerfile.js"
+    "dockerfile": "dist/bin/main.js"
   },
   "engines": {
     "node": ">=10.0.0",
@@ -38,21 +38,20 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@enlibe/eslint-config": "0.6.0",
-    "@enlibe/node-scripts": "0.3.3",
-    "@enlibe/ts-sdk": "0.6.0"
+    "@damlys/ts-sdk": "^1.0.1"
   },
   "scripts": {
-    "build": "rm -rf ./src-cjs && tsc",
-    "build:exec": "node ./src-cjs/bin/dockerfile.js",
-    "build:repl": "nodemon ./src-cjs/bin/dockerfile.js",
-    "dev:exec": "ts-node ./src/bin/dockerfile.ts",
-    "dev:repl": "ts-node-dev ./src/bin/dockerfile.ts",
+    "build": "rm -rf ./dist && tsc",
+    "src:exec": "ts-node ./src/bin/main.ts",
+    "src:repl": "ts-node-dev ./src/bin/main.ts",
+    "dist:exec": "node ./dist/bin/main.js",
+    "dist:repl": "nodemon ./dist/bin/main.js",
+    "dist:debug": "node --inspect='0.0.0.0:9229' ./dist/bin/main.js",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "eslint './**/*.{ts,tsx}' --fix",
     "lint:check": "eslint './**/*.{ts,tsx}'",
-    "test": "jest",
+    "test": "jest --verbose",
     "test:coverage": "rm -rf ./coverage && jest --coverage",
     "test:watch": "jest --watchAll",
     "version": "add-keepachangelog-header ./CHANGELOG.md && git add ./CHANGELOG.md"

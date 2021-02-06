@@ -100,7 +100,7 @@ and descriptions:
 #### .dockerfile.build
 
 Same as Docker Compose `v3.8`.
-See [official specification](https://docs.docker.com/compose/compose-file/compose-file-v3/).
+See [official specification](https://docs.docker.com/compose/compose-file/compose-file-v3/#build).
 
 This tool adds `PACKAGE_NAME` and `PACKAGE_VERSION`
 arguments (`.dockerfile.build.args`) on it's own,
@@ -157,7 +157,7 @@ in your `package.json` file:
 {
   "scripts": {
     "docker:build": "dockerfile compose | docker-compose --file - build",
-    "docker:publish": "dockerfile compose | docker-compose --file - push"
+    "docker:publish": "docker push \"$(dockerfile image)\""
   }
 }
 ```

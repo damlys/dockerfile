@@ -7,15 +7,21 @@ $ npm run format
 $ npm run lint
 $ npm run test
 
-$ alias dockerfile="node $(pwd)/src-cjs/bin/dockerfile.js"
+$ alias dockerfile="node $(pwd)/dist/bin/main.js"
 ```
 
 ## Versioning
 
+Bump `MINOR` version:
+
 ```console
-$ npm \
-  --no-git-tag-version \
-  version [major|minor|patch|...]
+$ npm version preminor --ignore-scripts --git-tag-version=false
+```
+
+Bump `MAJOR` version:
+
+```console
+$ npm version premajor --ignore-scripts --git-tag-version=false
 ```
 
 ## Distribution
@@ -30,5 +36,5 @@ This project uses GitHub Actions.
 
 Workflow requires `NPM_TOKEN` secret.
 
-See [.github/workflows/cd.yaml](../.github/workflows/cd.yaml)
+See [.github/workflows/continuous-delivery.yaml](../.github/workflows/continuous-delivery.yaml)
 file.
